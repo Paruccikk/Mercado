@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Formulário</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="contato.css" />
+    <link rel="icon" href="/imagens/Logo Smart.enc" type="image/x-icon">
+
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <title>Formulario de Contato</title>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="Contato.html">Início</a>
+            </li>
+            <li>
+              <!--
+                <div class="new-management-banner" id="managementBanner">
+                
+                  <p>
+                  <strong>Estamos sob nova direção!</strong> Nosso compromisso é oferecer uma experiência ainda melhor para você.
+                  <button id="closeBanner">Fechar</button>
+                </p>
+                
+              </div>
+              -->
+            </li>
+        </ul>
+    </nav>
+    
+    <center>
+      <img 
+        src="/imagens/Logo Smart.enc" 
+        style="
+          width: 300px; 
+          height: 300px; 
+          margin-top: 2px; 
+          border-radius: 50%; 
+          object-fit: cover;"
+      >
+    </center>
+    
+
+    <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Endereço</div>
+            <div class="text-one">Av. Raimundo Pereira de Magalhães, 12011 - Jardim Rincão</div>
+            <div class="text-two"> São Paulo - SP, 02675-031</div>
+            <br>
+            <a href="https://maps.app.goo.gl/RXmcTEBKxfY4wcRi8">Google Maps</a>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Telefone</div>
+            <div class="text-one">+55 11934590213</div>
+            <div class="text-two"></div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">danielparuccikk@gmail.com</div>
+            <div class="text-two"></div>
+          </div>
+        </div>
+
+        <div class="right-side">
+          <div class="topic-text">Envie sua mensagem</div>
+          <p>
+            Por favor, deixe sua sugestão. Sua opinião é fundamental para aprimorarmos nosso mercado e atendermos melhor às suas necessidades.
+          </p>
+          <form action="https://formsubmit.co/pwparucci@gmail.com" method="post">
+            <div class="input-box message-box">
+            <textarea name="Digite sua mensagem" placeholder="Escreva Aqui"></textarea>
+            </div>
+            <input  type="hidden" name="_captcha" value="false">
+            <div class="button">
+                <button type="submit">Enviar</button>
+
+                <div class="overlay" id="overlay">
+                  <div class="overlay-content">
+                    <!-- GIF de sucesso -->
+                    <div class="gif-container">
+                      <div class="tenor-gif-embed" data-postid="17542131" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+                        <a href="https://tenor.com/view/check-mark-button-joypixels-correct-right-accurate-gif-17542131">Check Mark Button Joypixels Sticker</a>
+                        from <a href="https://tenor.com/search/check+mark+button-stickers">Check Mark Button Stickers</a>
+                      </div>
+                      <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                    </div>
+                    <!-- Texto de agradecimento -->
+                    <p class="thank-you-text">Obrigado por sua sugestão! Estamos trabalhando para melhorar nosso mercado.</p>
+                  </div>
+                </div>
+                
+          </form>
+        </div>
+      </div>
+    </div>
+    <center>
+
+      
+      <br>
+      <br>
+      <h3> Localização </h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.685985460962!2d-46.7220966!3d-23.4357079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefbbae5795bb9%3A0xf62ab43d7d76bdf9!2sCondom%C3%ADnio%20Porto%20Seguro!5e0!3m2!1spt-BR!2sbr!4v1737349525440!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <br>
+      <br>
+      <footer>
+          <div class="footer-contact">
+      <p>Desenvolvido por <a href="https://www.instagram.com/danielsparucci/" target="_blank"> @danielsparucci </a></p>
+          </div>
+        <div class="footer-bottom">
+          <p>Copyrigh ©2025. - Todos os direitos reservados.</p>
+        </div>
+      </footer>
+  
+      <div class="footer-bottom"></div>
+    </div>
+  
+    <script>
+      const form = document.querySelector('form');
+      const overlay = document.getElementById('overlay');
+    
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+    
+        // Mostra o overlay
+        overlay.style.display = 'flex';
+    
+        // Simula um tempo de espera antes de ocultar o overlay (opcional)
+        setTimeout(() => {
+          overlay.style.display = 'none'; // Esconde o overlay após 3 segundos
+        }, 3000);
+    
+        // Aqui você pode adicionar lógica para enviar o formulário com fetch ou AJAX, se necessário.
+      });
+    </script>
+
+
+<script>
+  document.getElementById('closeBanner').addEventListener('click', function () {
+    document.getElementById('managementBanner').style.display = 'none';
+  });
+</script>
+
+    
+
+    <script src="mobile-navbar.js"></script>
+</center>
+</body>
+</html>
