@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Taxas</title>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+                <li>
+                  <a href="calculadora.html">Início</a>
+              </li>
+            </ul>
+        </nav>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .calculator h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .calculator label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .results p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .results p span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculador de Taxas</h2>
+        <label for="debitAmount">Valor Débito (R$):</label>
+        <input type="number" id="debitAmount" placeholder="Ex: 100.00" oninput="calculateFees()">
+
+        <label for="creditAmount">Valor Crédito (R$):</label>
+        <input type="number" id="creditAmount" placeholder="Ex: 100.00" oninput="calculateFees()">
+
+        <label for="pixAmount">Valor Pix (R$):</label>
+        <input type="number" id="pixAmount" placeholder="Ex: 100.00" oninput="calculateFees()">
+
+        <div class="results">
+            <p>Valor Líquido Débito: <span id="debitNet"></span></p>
+            <p>Valor Líquido Crédito: <span id="creditNet"></span></p>
+            <p>Valor Líquido Pix: <span id="pixNet"></span></p>
+            <p>Total Líquido: <span id="grandNetTotal"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateFees() {
+            const debitAmount = parseFloat(document.getElementById('debitAmount').value) || 0;
+            const creditAmount = parseFloat(document.getElementById('creditAmount').value) || 0;
+            const pixAmount = parseFloat(document.getElementById('pixAmount').value) || 0;
+
+            const debitNet = debitAmount - (debitAmount * 0.01);
+            const creditNet = creditAmount - (creditAmount * 0.0295);
+            const pixNet = pixAmount - (pixAmount * 0.0030);
+
+            const grandNetTotal = debitNet + creditNet + pixNet;
+
+            document.getElementById('debitNet').textContent = `R$ ${debitNet.toFixed(2)}`;
+            document.getElementById('creditNet').textContent = `R$ ${creditNet.toFixed(2)}`;
+            document.getElementById('pixNet').textContent = `R$ ${pixNet.toFixed(2)}`;
+            document.getElementById('grandNetTotal').textContent = `R$ ${grandNetTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
